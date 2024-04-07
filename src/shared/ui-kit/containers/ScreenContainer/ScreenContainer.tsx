@@ -1,8 +1,9 @@
 import React, { FC, ReactElement } from 'react'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, StyleProp, StyleSheet, ViewStyle } from "react-native";
 
 interface IScreenContainerProps {
   children: React.ReactNode
+  style?: StyleProp<ViewStyle>
 }
 
 /**
@@ -12,9 +13,10 @@ interface IScreenContainerProps {
  */
 const ScreenContainer: FC<IScreenContainerProps> = ({
   children,
+  style,
 }): ReactElement => {
   return (
-    <SafeAreaView style={{ paddingTop: 16, flex: 1 }}>{children}</SafeAreaView>
+    <SafeAreaView style={StyleSheet.flatten([{ paddingTop: 16, flex: 1 }, style])}>{children}</SafeAreaView>
   )
 }
 

@@ -49,7 +49,7 @@ const HomeScreen: FC<IHomeScreenProps> = ({ navigation }): ReactElement => {
         ])
       }
     >
-      <Text>{item.name}</Text>
+      <Text style={{color: 'black', fontSize: 30}}>{item.name}</Text>
       <Text>{item.description}</Text>
     </Pressable>
   )

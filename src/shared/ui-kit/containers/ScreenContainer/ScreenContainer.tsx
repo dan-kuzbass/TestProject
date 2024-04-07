@@ -1,15 +1,20 @@
-import React, { FC } from 'react'
+import React, { FC, ReactElement } from 'react'
 import { SafeAreaView } from 'react-native'
 
 interface IScreenContainerProps {
   children: React.ReactNode
 }
 
-const ScreenContainer: FC<IScreenContainerProps> = ({ children }) => {
+/**
+ * @description - Контейнер для всех экранов
+ * @constructor
+ * @return {ReactElement}
+ */
+const ScreenContainer: FC<IScreenContainerProps> = ({
+  children,
+}): ReactElement => {
   return (
-    <SafeAreaView style={{ paddingTop: 16, paddingHorizontal: 16 }}>
-      {children}
-    </SafeAreaView>
+    <SafeAreaView style={{ paddingTop: 16, flex: 1 }}>{children}</SafeAreaView>
   )
 }
 

@@ -1,8 +1,21 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useState } from 'react'
 import { ScreenContainer } from '../../shared/ui-kit'
 import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 
-const Task1Screen = () => {
+/**
+ * Есть список объектов карточек, который нужно отобразить пользователю.
+ * Как константу нужно использовать список [150, 150, 200, 200, 100, 100].
+ * Блоки карточек заполняют пространство между друг-другом, оставляя небольшой отсуп(10 px например).
+ * При этом самый большой блок увеличивает остальные блоки в ряду.
+ * Тем самым, если карточка с высотой 100px попадает в ряд с карточкой высотой в 200px,
+ * то она растягивается на размер 200, тоесть на высоту самой большой карточки в ряду.
+ * Кол-во столбиков с картами должно меняться динамически,
+ * в зависимости от размера представления-родителя, тоесть использование dimensions экрана не допустимо.
+ * При повороте устройства все должно хорошо работать
+ * @constructor
+ * @return {ReactElement}
+ */
+const Task1Screen = (): ReactElement => {
   const data = [150, 150, 200, 200, 100, 100]
   const [screenWidth, setScreenWidth] = useState(200)
 

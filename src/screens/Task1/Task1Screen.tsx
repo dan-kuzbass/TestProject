@@ -21,11 +21,13 @@ const Task1Screen = (): ReactElement => {
 
   /**
    * @param {number} size - размер элемента
+   * @param {number} index
    * @return {ReactElement}
    */
-  const renderItem = (size: number): ReactElement => {
+  const renderItem = (size: number, index: number): ReactElement => {
     return (
       <View
+        key={index}
         style={StyleSheet.flatten([
           styles.itemContainer,
           { width: size, minHeight: size },
